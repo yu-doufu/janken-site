@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>キリちゃんじゃんけん</title>
+</head>
+<body>
+  <h1>キリちゃんじゃんけん</h1>
+
+  <button onclick="playStart()">じゃんけん</button>
+  <button onclick="playRandom()">ぽん</button>
+
+  <script>
+    function playSound(file) {
+      const audio = new Audio(file);
+      audio.play();
+    }
+
+    function playStart() {
+      playSound("sounds/start.mp3");
+    }
+
+    function playRandom() {
+      const results = [
+        "sounds/result1.mp3",
+        "sounds/result2.mp3",
+        "sounds/result3.mp3"
+      ];
+
+      const randomFile = results[Math.floor(Math.random() * results.length)];
+      playSound(randomFile);
+    }
+  </script>
+</body>
+</html>
